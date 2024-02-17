@@ -16,9 +16,6 @@ partial class Program
     static void ShowLastDigits((int numar,uint cifre) date)
     {
         var numarString = date.numar.ToString();
-        for (int i = (int)(numarString.Length - date.cifre); i < numarString.Length; i++) 
-        {
-            Console.Write(numarString[i]);
-        }
+        Console.WriteLine(numarString.Substring((int)(numarString.Length - date.cifre)));
     }
 }
