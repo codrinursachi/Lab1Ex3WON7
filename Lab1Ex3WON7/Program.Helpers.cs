@@ -1,15 +1,14 @@
 ﻿partial class Program
 {
-    static (int,uint) ReadNumber(in uint NUMAR_CIFRE)
+    static (int,uint) ReadNumber(uint numarCifre)
     {
-        int numar;
-        Console.WriteLine($"Scrieti un numar intreg pentru a i se afisa ultimele {NUMAR_CIFRE} cifre");
-        if (!int.TryParse(Console.ReadLine(), out numar))
+        Console.WriteLine($"Scrieti un numar intreg pentru a i se afisa ultimele {numarCifre} cifre");
+        if (!int.TryParse(Console.ReadLine(), out int numar))
         {
             Console.WriteLine("Nu ati introdus datele in format valid, mai incercati");
-            ReadNumber(NUMAR_CIFRE);
+            ReadNumber(numarCifre);
         }
-        return (numar, NUMAR_CIFRE);
+        return (numar, numarCifre);
     }
     static void ShowLastDigits(in (int numar,uint NUMAR_CIFRE) date)
     {
